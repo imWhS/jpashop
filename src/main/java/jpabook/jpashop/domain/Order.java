@@ -33,7 +33,10 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
-    //연관 관계 편의 메서드
+    /*
+    양방향 연관 관계 설정 편의 메서드
+     */
+
     public void setMember(Member member) {
         this.member = member;
         member.getOrders().add(this);

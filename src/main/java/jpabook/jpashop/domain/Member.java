@@ -22,4 +22,13 @@ public class Member {
 
     @OneToMany(mappedBy = "member") //Order의 member 필드에 의해 매핑되어지는 필드
     private List<Order> orders = new ArrayList<>();
+
+    /*
+    양방향 연관 관계 설정 편의 메서드
+     */
+
+    void addOrder(Order order) {
+        this.orders.add(order);
+        order.setMember(this);
+    }
 }

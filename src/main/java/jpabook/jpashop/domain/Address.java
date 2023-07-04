@@ -12,9 +12,11 @@ public class Address {
     private String street;
     private String zipcode;
 
-    private Address() {
+    //기본 생성자
+    protected Address() {
     }
 
+    //필드 초기화 생성자
     public Address(String city, String street, String zipcode) {
         this.city = city;
         this.street = street;
