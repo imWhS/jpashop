@@ -20,15 +20,14 @@ public class ItemService {
     public void saveItem(Item item) {
         itemRepository.save(item);
     }
-    
+
+    //Book 한정
     @Transactional
-    public void updateItem(Long itemId, Book param) {
+    public void updateItem(Long itemId, String name, int price, int stockQuantity) {
         Item findItem = itemRepository.findOne(itemId);
-        findItem.setName(param.getName());
-        findItem.setId(param.getId());
-        findItem.setCategories(param.getCategories());
-        findItem.setStockQuantity(param.getStockQuantity());
-        findItem.setPrice(param.getPrice());
+        findItem.setName(name);
+        findItem.setPrice(price);
+        findItem.setStockQuantity(stockQuantity);
     }
 
     public List<Item> findItems() {
